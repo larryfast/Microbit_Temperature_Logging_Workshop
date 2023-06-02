@@ -12,17 +12,6 @@ The remainder of this README are detailed instructions for downloading and runni
 - [Install the Python Packages used by the code](#Install-the-Python-Packages-used-by-the-code)
 - [Start your engines!](#start-your-engines)
 
-
-- [start_serial2csv with radio2serial microbit connected](#start_serial2csv-with-radio2serial-microbit-connected)
-- Power up a Temperature sensing Microbit
-- Open live_data.xlsm
-- Enable Developer Tab 
-- Run the Macro
-- Data => Click Refresh
-- See your temperature readings in the graph
-- Power up more Temperature Microbits
-- Hit Refresh and these will start appearing on the graph
-
 ### Project Requirements
 * Currently this project runs on Windows only. As soon as someone asks, we can set it up to run on Linux and Mac.
 - PC running Windows
@@ -92,14 +81,17 @@ The short story is run a macro that does the final configuration of the spreadsh
 - Save a copy of your configured Excel file
 
 ## Start your engines!
-The remaining steps power up all the bits and get them talking to each other
+Time to start recording Temperatures! The remaining steps power up all the bits and get them talking to each other.
 
-### Open spreadsheet in Excel
+### Connect Microbit programmed with radio2serial.hex to USB port
 
-### start_serial2csv with radio2serial microbit connected
+### Run start_serial2csv.bat from Powershell
 The video introduction has a segment on starting the Python program.
+- Delete file: ubit_live_data.csv
 - Open a Powershell window in project folder
 - Run this command:   .\start_serial2csv.bat
+
+### Open spreadsheet in Excel
 
 ### Power up one or more Temperature sensing Microbits
 
