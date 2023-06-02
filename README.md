@@ -4,7 +4,8 @@ If you're new to this project, check out the video introduction (TODO: LOCATION?
 
 ####  TOC
 - [#Download the project code to a folder]
-- [Program your Microbits](#Program your microbits)
+- [Program your Microbits](#Program-your-microbits)
+- (#Program-your-microbits)
 - [[#Install Python]]
 - [[#Install the Python Packages used by the code]]
 - 
