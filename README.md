@@ -2,7 +2,9 @@
 ### User Setup instructions for Temperature Logging Workshop
 If you're new to this project, check out the video introduction (TODO: LOCATION??). This workshop is suitable for experienced Microbit users who want to try something more challenging. 
 
-The remainder of this README are detailed instructions for downloading and running this project
+The remainder of this README are detailed instructions for downloading and running this project.
+
+TODO: This documentation only covers setup and operation. It does not include a specific experiment design. First suggestion is wrapping Microbits in different kinds of insulation. Then compare cooling or warming rates.
 
 ####  Table of Contents
 - [Project Requirements](#Project-Requirements)
@@ -77,7 +79,7 @@ The short story is run a macro that does the final configuration of the spreadsh
 - Open Developer Tab
 - Select Macros => Workbook Macros
 - Run the TODO: MACRO NAME
-- Exit Excel
+- Exit Excel- Give students
 - Save a copy of your configured Excel file
 
 ## Start your engines!
@@ -99,3 +101,19 @@ The video introduction has a segment on starting the Python program.
 If you're in a hurry... 
 - open the Data Tab
 - Click Refresh
+
+## Shutting Down
+- Before closing excel, run the Backup Data Macro. See video for details
+- Give your test results sheet a useful name. Eg. ColdTests-05-22
+- close Excel
+- save a copy of the spreadsheet
+- close the powershell window
+
+## Epilogue
+After collecting Temperature data from a set of Microbits, you can examine that data in other ways. 
+- Caution: do not use the live_data sheet. When running excel, this sheet could recieve new data, erasing the existing data.
+- Use the Backup sheet for analysis (eg. ColdTests-05-22)
+- Some options include
+	- Transfer the data to a Google Sheet so everyone can access it
+	- Compare the speed of cooling for different kinds of insulation
+	- Students can extract the Temperatures from their Microbit and graph their own data
