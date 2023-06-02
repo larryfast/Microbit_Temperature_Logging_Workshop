@@ -3,12 +3,10 @@
 If you're new to this project, check out the video introduction (TODO: LOCATION??). This workshop is suitable for experienced Microbit users who want to try something more challenging. 
 
 ####  TOC
-- [#Download the project code to a folder]
+- [Download the project code to a folder](#Download-the-project-code-to-a-folder)
 - [Program your Microbits](#Program-your-microbits)
-- (#Program-your-microbits)
-- [[#Install Python]]
-- [[#Install the Python Packages used by the code]]
-- 
+- [Install Python](#Install-Python)
+- [Install the Python Packages used by the code](#Install-the-Python-Packages-used-by-the-code)
 - start_serial2csv with radio2serial microbit connected
 - Power up a Temperature sensing Microbit
 - Open live_data.xlsm
@@ -26,7 +24,7 @@ In a browser, open to the Github project repository
 https://github.com/larryfast/Microbit_Temperature_Logging_Workshop
 
 Download a ZIP file of all the code
-![[github_download_zip.png]]
+!(Readme_files/github_download_zip.png)
 
 Pick a location on your computer. Unzip the project files into that folder.
 
@@ -58,7 +56,7 @@ Note: The funky strings (zitaz & tugog in this example) are the Microbit IDs. Th
 Download the Python installer from here:
 Recommended version: [Windows Installer (64-bit)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)
 Installation Page: [Python Releases for Windows | Python.org](https://www.python.org/downloads/windows/)
-![[Pasted image 20230601155107.png]]
+!(Readme_files/PythonVersionSelected.png)
 
 NOTE: When running the installer both options should be checked.
 ![[InstallPython_OptionsChecked.png]]
