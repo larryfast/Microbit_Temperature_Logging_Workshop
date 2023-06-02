@@ -2,7 +2,9 @@
 ### User Setup instructions for Temperature Logging Workshop
 If you're new to this project, check out the video introduction (TODO: LOCATION??). This workshop is suitable for experienced Microbit users who want to try something more challenging. 
 
-####  TOC
+The remainder of this README are detailed instructions for downloading and running this project
+
+####  Table of Contents
 - [Download the project code to a folder](#Download-the-project-code-to-a-folder)
 - [Program your Microbits](#Program-your-microbits)
 - [Install Python](#Install-Python)
@@ -68,4 +70,12 @@ The video introduction has a segment on installing these packages.
 - Open a Powershell window in project folder
 - Run this command:   .\install_python_packages.bat
 
+## Start your engines!
+The remaining steps power up all the bits and get them talking to each other
+
 ### start_serial2csv with radio2serial microbit connected
+### Power up a Temperature sensing Microbit
+### Open live_data.xlsm
+### Enable Developer Tab 
+### Run the Macro
+### Data => Click Refresh
