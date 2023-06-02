@@ -5,11 +5,15 @@ If you're new to this project, check out the video introduction (TODO: LOCATION?
 The remainder of this README are detailed instructions for downloading and running this project
 
 ####  Table of Contents
+- [Project Requirements](#Project-Requirements)
 - [Download the project code to a folder](#Download-the-project-code-to-a-folder)
 - [Program your Microbits](#Program-your-microbits)
 - [Install Python](#Install-Python)
 - [Install the Python Packages used by the code](#Install-the-Python-Packages-used-by-the-code)
-- start_serial2csv with radio2serial microbit connected
+- [Start your engines!](#start-your-engines)
+
+
+- [start_serial2csv with radio2serial microbit connected](#start_serial2csv-with-radio2serial-microbit-connected)
 - Power up a Temperature sensing Microbit
 - Open live_data.xlsm
 - Enable Developer Tab 
@@ -19,17 +23,24 @@ The remainder of this README are detailed instructions for downloading and runni
 - Power up more Temperature Microbits
 - Hit Refresh and these will start appearing on the graph
 
+### Project Requirements
+* Currently this project runs on Windows only. As soon as someone asks, we can set it up to run on Linux and Mac.
+- PC running Windows
+- Excel (future: Libre Calc)
+- USB port for connecting to Microbits - will not work with Microbits connected via Wifi
+- Microbits! (of course)
+	- At least one Microbit must be version 2.0 or higher
+	- [finding your Microbit version number](https://support.microbit.org/support/solutions/articles/19000119162-how-to-identify-the-version-number-of-your-micro-bit#:~:text=20%2C%20V2%2C%20V1.,beneath%20the%20black%20silkscreen%20paint.)
 
 ### Download the project code to a folder
 
-In a browser, open to the Github project repository
+In a browser, open the Github project repository
 https://github.com/larryfast/Microbit_Temperature_Logging_Workshop
 
 Download a ZIP file of all the code
 ![](Readme_files/github_download_zip.png)
 
 Pick a location on your computer. Unzip the project files into that folder.
-
 
 ### Program your microbits
 The project folder contains 2 .hex files
@@ -70,12 +81,29 @@ The video introduction has a segment on installing these packages.
 - Open a Powershell window in project folder
 - Run this command:   .\install_python_packages.bat
 
+### Configure the spreadsheet for your computer
+The short story is run a macro that does the final configuration of the spreadsheet.  Instructions for the following steps are in the video.
+- Open the spreadsheet in Excel
+- Enable the Developer Menu
+- Open Developer Tab
+- Select Macros => Workbook Macros
+- Run the TODO: MACRO NAME
+- Exit Excel
+- Save a copy of your configured Excel file
+
 ## Start your engines!
 The remaining steps power up all the bits and get them talking to each other
 
+### Open spreadsheet in Excel
+
 ### start_serial2csv with radio2serial microbit connected
-### Power up a Temperature sensing Microbit
-### Open live_data.xlsm
-### Enable Developer Tab 
-### Run the Macro
-### Data => Click Refresh
+The video introduction has a segment on starting the Python program.
+- Open a Powershell window in project folder
+- Run this command:   .\start_serial2csv.bat
+
+### Power up one or more Temperature sensing Microbits
+
+### Spreadsheet should show updated Temperatures every minute
+If you're in a hurry... 
+- open the Data Tab
+- Click Refresh
