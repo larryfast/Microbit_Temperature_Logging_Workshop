@@ -12,6 +12,7 @@ TODO: This documentation only covers setup and operation. It does not include a 
 - [Program your Microbits](#Program-your-microbits)
 - [Install Python](#Install-Python)
 - [Install the Python Packages used by the code](#Install-the-Python-Packages-used-by-the-code)
+- [Configure the spreadsheet for your computer](#configure-the-spreadsheet-for-your-computer)
 - [Start your engines!](#start-your-engines)
 
 ### Project Requirements
