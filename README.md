@@ -81,7 +81,9 @@ The video introduction has a segment on installing these packages.
 ### Configure the spreadsheet for your computer
 The short story is, run the  Excel Macro. It adjusts the spreadsheet to work on your PC. Instructions for the following steps are in the video.
 - Open the spreadsheet in Excel
-- Enable the Developer Menu
+- Enable Editing
+- Close the warning about running Macros - no changes required
+- Enable the Developer Menu (detailed steps are in the video)
 - Open Developer Tab
 - Select Macros => Workbook Macros
 - Run the **connect_external_csv** macro
