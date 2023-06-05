@@ -79,19 +79,19 @@ The video introduction has a segment on installing these packages.
 - Run this command:   .\install_python_packages.bat
 
 ### Configure the spreadsheet for your computer
-The short story is run a macro that does the final configuration of the spreadsheet.  Instructions for the following steps are in the video.
+The short story is, run the  Excel Macro. It adjusts the spreadsheet to work on your PC. Instructions for the following steps are in the video.
 - Open the spreadsheet in Excel
 - Enable the Developer Menu
 - Open Developer Tab
 - Select Macros => Workbook Macros
-- Run the TODO: MACRO NAME
-- Exit Excel- Give students
+- Run the **connect_external_csv** macro
+- Exit Excel
 - Save a copy of your configured Excel file
 
 ## Start your engines!
 Time to start recording Temperatures! The remaining steps power up all the bits and get them talking to each other.
 
-### Connect Microbit programmed with radio2serial.hex to USB port
+### Connect the Microbit programmed with radio2serial.hex to USB port
 
 ### Run start_serial2csv.bat from Powershell
 The video introduction has a segment on starting the Python program.
@@ -110,7 +110,7 @@ If you're in a hurry...
 
 ## Shutting Down
 - Before closing excel, run the Backup Data Macro. See video for details
-- Give your test results sheet a useful name. Eg. ColdTests-05-22
+	- Give your test results sheet a useful name. Eg. ColdTests-05-22
 - close Excel
 - save a copy of the spreadsheet
 - close the powershell window
