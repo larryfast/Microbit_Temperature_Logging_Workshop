@@ -1,12 +1,13 @@
 # Microbit_Temperature_Logging_Workshop
 ### User Setup instructions for Temperature Logging Workshop
-If you're new to this project, check out the video introduction (TODO: LOCATION??). This workshop is suitable for experienced Microbit users who want to try something more challenging. 
+If you're new to this project, check out the [Video Introduction](https://drive.google.com/file/d/1mYZ_2l180Y-lkBSsZB7TyOlIXvZIsM0o/view?usp=sharing). This workshop is suitable for experienced Microbit users who want to try something more challenging. 
 
-The remainder of this README are detailed instructions for downloading and running this project.
+The remainder of this README are detailed instructions for downloading and running the project.
 
 TODO: This documentation only covers setup and operation. It does not include a specific experiment design. First suggestion is wrapping Microbits in different kinds of insulation. Then compare cooling or warming rates.
 
 ####  Table of Contents
+- [Setup Instructions Video](#Setup-Instructions-Video)
 - [Project Requirements](#Project-Requirements)
 - [Download the project code to a folder](#Download-the-project-code-to-a-folder)
 - [Program your Microbits](#Program-your-microbits)
@@ -14,6 +15,10 @@ TODO: This documentation only covers setup and operation. It does not include a 
 - [Install the Python Packages used by the code](#Install-the-Python-Packages-used-by-the-code)
 - [Configure the spreadsheet for your computer](#configure-the-spreadsheet-for-your-computer)
 - [Start your engines!](#start-your-engines)
+
+### Setup Instructions Video
+The instructions below are also available as a video.
+https://drive.google.com/file/d/1mYZ_2l180Y-lkBSsZB7TyOlIXvZIsM0o/view?usp=sharing
 
 ### Project Requirements
 * Currently this project runs on Windows only. As soon as someone asks, we can set it up to run on Linux and Mac.
