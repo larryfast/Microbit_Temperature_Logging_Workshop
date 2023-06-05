@@ -18,7 +18,7 @@ TODO: This documentation only covers setup and operation. It does not include a 
 
 ### Setup Instructions Video
 The instructions below are also available as a video.
-https://drive.google.com/file/d/1mYZ_2l180Y-lkBSsZB7TyOlIXvZIsM0o/view?usp=sharing
+[Setup Instructions Video](https://drive.google.com/file/d/1mYZ_2l180Y-lkBSsZB7TyOlIXvZIsM0o/view?usp=sharing)
 
 ### Project Requirements
 * Currently this project runs on Windows only. As soon as someone asks, we can set it up to run on Linux and Mac.
