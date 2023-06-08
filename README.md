@@ -74,7 +74,8 @@ The project uses Python code to collect the Temperature readings from radio2seri
 
 The video introduction has a segment on installing these packages. 
 - Open a Powershell window in project folder
-- Run this command:   **.\**install_python_packages.bat
+- Run this command:   .\install_python_packages.bat
+- NOTE: dot-backslash is needed at the start of this command
 
 ### Configure the live_data.xlsm spreadsheet for your computer
 The short story is, run the **connect_external_csv** Excel Macro. It adjusts the spreadsheet to work on your PC. 
@@ -100,7 +101,8 @@ Time to start recording Temperatures! The remaining steps power up all the bits 
 The video introduction has a segment on starting the Python program.
 - Open a Powershell window in project folder
 - Run this command:   .\start_serial2csv.bat
-
+- NOTE: dot-backslash is needed at the start of this command
+- 
 ### Open spreadsheet in Excel
 
 ### Power up one or more Temperature sensing Microbits
