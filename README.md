@@ -65,10 +65,8 @@ Note: The funky strings you see (zitaz & tugog in this example) are the Microbit
 ### Install Python
 Download the Python installer from here:
 Recommended version: [Windows Installer (64-bit)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)
-Installation Page: [Python Releases for Windows | Python.org](https://www.python.org/downloads/windows/)
-![](Readme_files/PythonVersionSelected.png)
 
-NOTE: When running the installer byou can review the microbit editor and program your microbits from these projectsoth options should be checked.
+NOTE: When running the installer uncheck run as Administrator & check update path.
 ![](Readme_files/InstallPython_OptionsChecked.png)
 
 ### Install the Python Packages used by the code
@@ -76,7 +74,7 @@ The project uses Python code to collect the Temperature readings from radio2seri
 
 The video introduction has a segment on installing these packages. 
 - Open a Powershell window in project folder
-- Run this command:   .\install_python_packages.bat
+- Run this command:   **.\**install_python_packages.bat
 
 ### Configure the live_data.xlsm spreadsheet for your computer
 The short story is, run the **connect_external_csv** Excel Macro. It adjusts the spreadsheet to work on your PC. 
