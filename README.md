@@ -78,9 +78,10 @@ The video introduction has a segment on installing these packages.
 - Open a Powershell window in project folder
 - Run this command:   .\install_python_packages.bat
 
-### Configure the spreadsheet for your computer
-The short story is, run the  Excel Macro. It adjusts the spreadsheet to work on your PC. Instructions for the following steps are in the video.
-- Open the spreadsheet in Excel
+### Configure the live_data.xlsm spreadsheet for your computer
+The short story is, run the **connect_external_csv** Excel Macro. It adjusts the spreadsheet to work on your PC. 
+- **The video shows you how to run the following steps.**
+- Open the live_data.xlsm spreadsheet in Excel
 - Enable Editing
 - Close the warning about running Macros - no changes required
 - Enable the Developer Menu (detailed steps are in the video)
@@ -95,9 +96,10 @@ Time to start recording Temperatures! The remaining steps power up all the bits 
 
 ### Connect the Microbit programmed with radio2serial.hex to USB port
 
+### Delete file: ubit_live_data.csv
+
 ### Run start_serial2csv.bat from Powershell
 The video introduction has a segment on starting the Python program.
-- Delete file: ubit_live_data.csv
 - Open a Powershell window in project folder
 - Run this command:   .\start_serial2csv.bat
 
