@@ -53,8 +53,8 @@ If preferred you can use the microbit editor to review the code and program your
 #### Optional: Test your microbits 
 You can test the microbits without the rest of the project code
 - Connect the radio2serial Microbit to your USB port
-- Open the Microbit Editor
-- Connect the editor to your device
+- Open Makecode (Microbit Editor)
+- Connect your device  (3-dot menu beside Download, lower right)
 - Power up at least one Temperature Sender
 	- Each of these will read the Temperature every 2 seconds and send the result to the radio2serial Microbit
 - Display the output graphically
@@ -78,24 +78,28 @@ The video introduction has a segment on installing these packages.
 - Open a Powershell window in project folder
 - Run this command:   .\install_python_packages.bat
 
-### Configure the spreadsheet for your computer
-The short story is run a macro that does the final configuration of the spreadsheet.  Instructions for the following steps are in the video.
-- Open the spreadsheet in Excel
-- Enable the Developer Menu
+### Configure the live_data.xlsm spreadsheet for your computer
+The short story is, run the **connect_external_csv** Excel Macro. It adjusts the spreadsheet to work on your PC. 
+- **The video shows you how to run the following steps.**
+- Open the live_data.xlsm spreadsheet in Excel
+- Enable Editing
+- Close the warning about running Macros - no changes required
+- Enable the Developer Menu (detailed steps are in the video)
 - Open Developer Tab
 - Select Macros => Workbook Macros
-- Run the TODO: MACRO NAME
-- Exit Excel- Give students
+- Run the **connect_external_csv** macro
+- Exit Excel
 - Save a copy of your configured Excel file
 
 ## Start your engines!
 Time to start recording Temperatures! The remaining steps power up all the bits and get them talking to each other.
 
-### Connect Microbit programmed with radio2serial.hex to USB port
+### Connect the Microbit programmed with radio2serial.hex to USB port
+
+### Delete file: ubit_live_data.csv
 
 ### Run start_serial2csv.bat from Powershell
 The video introduction has a segment on starting the Python program.
-- Delete file: ubit_live_data.csv
 - Open a Powershell window in project folder
 - Run this command:   .\start_serial2csv.bat
 
@@ -110,7 +114,7 @@ If you're in a hurry...
 
 ## Shutting Down
 - Before closing excel, run the Backup Data Macro. See video for details
-- Give your test results sheet a useful name. Eg. ColdTests-05-22
+	- Give your test results sheet a useful name. Eg. ColdTests-05-22
 - close Excel
 - save a copy of the spreadsheet
 - close the powershell window
