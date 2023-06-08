@@ -53,8 +53,8 @@ If preferred you can use the microbit editor to review the code and program your
 #### Optional: Test your microbits 
 You can test the microbits without the rest of the project code
 - Connect the radio2serial Microbit to your USB port
-- Open the Microbit Editor
-- Connect the editor to your device
+- Open Makecode (Microbit Editor)
+- Connect your device  (3-dot menu beside Download, lower right)
 - Power up at least one Temperature Sender
 	- Each of these will read the Temperature every 2 seconds and send the result to the radio2serial Microbit
 - Display the output graphically
