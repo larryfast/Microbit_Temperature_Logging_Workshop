@@ -42,11 +42,14 @@ class Serial2CSV():
         self.sample_count = int(24.0*3600/self.sampling_period_secs)
         self.continue_serial_read_thread = True
         self.logfile_path = 's2csv.log'
-        self.backup_interval_secs = 300 # 5 minutes
+        # self.backup_interval_secs = 300 # 5 minutes
+        self.backup_interval_secs = 60 # TODO DEV ONLY
         # self.backup_interval_secs = 5 # TODO DEV ONLY
         self.backup_folder_str = './backups/'
         self.backup_file_prefix = 'ubit_live_data_'
         self.backup_last_saved = 0
+        self.backup_file_suffix = '%Y%m%d_%H%M%S'
+        self.new_csv_linesL = []
 
         '''
         Fake Data for System Testing
@@ -191,8 +194,43 @@ class Serial2CSV():
         self.new_csv_linesL = [heading_line, new_first_line]
         self.new_csv_linesL.extend(self.csvLinesL[1:])
 
-    def csv_writelines(self, mypath = None):
-        if mypath == None:
+    def detect_invalid_time_column_debug_code(self):
+        '''
+        Rescan the whole csv for errors
+        '''
+        for linenum, row in enumerate(self.new_csv_linesL):
+            if re.match('Time', row):
+                log.info('Time heading found')
+                return()
+            elif isinstance(row[0], int):
+                # valid Time value found
+                return()
+
+            # ERROR in new_csv_linesL - Time value is not a number
+            # DUMP EVERYTHING AND HALT
+            print(f'Invalid value in Time Column! Please send s2csv.log to developers.')
+            print(f'To recover with minimal data loss,\n   - copy latest file in backups folder\n    - to ubit_live_data.csv')
+            log.error(f'Invalid Time column detected in ROW {linenum}, CONTENT: {row}')
+            self.dump_everything()
+            log.error(f'Invalid Time column detected in ROW {linenum}, CONTENT: {row}')
+            exit(-1)
+        exit(f'new_csv_linesL is empty: {self.new_csv_linesL}')
+
+    def dump_everything(self):
+            log.error("Start of DATA DUMP - cause should be on the line above this")
+            log.warning("Dump of new_csv_linesL")
+            log.warning(f'new_csv_linesL: {self.new_csv_linesL}')
+            log.warning(f'new_ubit_dataD: {self.new_ubit_dataD}')
+            log.warning(f'csvLinesL: {self.csvLinesL}')
+            log.warning(f'heading_colsL: {self.heading_colsL}')
+            log.warning(f'next_data_row: {self.next_data_row}')
+            # log.warning(f'keys: {self.__dict__.keys()}')
+            log.warning("END of DATA DUMP - cause should be reported on the line below this")
+
+    def csv_writelines(self, mypath=None):
+        self.detect_invalid_time_column_debug_code()
+
+        if mypath is None:
             mypath = self.csv_path
         keep_trying = 3
         while( keep_trying > 0 ):
@@ -221,8 +259,8 @@ class Serial2CSV():
                 self.backup_last_saved = time.time()
                 # Build path
                 dt = datetime.datetime.fromtimestamp(time.time())
-                suffix = dt.strftime('%Y-%m-%d_%H:%M:%S')
-                backup_file_path = self.backup_folder_str + self.backup_file_prefix + suffix
+                suffix = dt.strftime(self.backup_file_suffix)
+                backup_file_path = self.backup_folder_str + self.backup_file_prefix + suffix + '.csv'
                 Path( self.backup_folder_str ).mkdir( exist_ok=True )
                 shutil.copy2( self.csv_path, backup_file_path )
             except Exception as e:
@@ -398,7 +436,7 @@ class Serial2CSV():
                 data = self.ser.readline().decode('utf-8').strip()
                 self.qu.put(data)
         except Exception as e:
-            log.warn(f'Serial Error ignored:\n      {e}\nSerial Port not available. Are you root? Is Microbit plugged in?\n')
+            log.warning(f'Serial Error ignored:\n      {e}\nSerial Port not available. Are you root? Is Microbit plugged in?\n')
             print(f'Serial Error ignored:\n      {e}\nSerial Port not available. Are you root? Is Microbit plugged in?\n')
             # raise(e)
             
@@ -438,6 +476,7 @@ class Serial2CSV():
             self.logfile_path, maxBytes=max_file_size, backupCount=max_backup_files)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
+        global log
         log = logging.getLogger(__name__)
         log.setLevel(logging.INFO)
         log.addHandler(file_handler)
