@@ -41,7 +41,6 @@ class Serial2CSV():
         self.sampling_period_secs = 3.1
         self.sample_count = int(24.0*3600/self.sampling_period_secs)
         self.continue_serial_read_thread = True
-        self.logfile_path = 's2csv.log'
         # self.backup_interval_secs = 300 # 5 minutes
         self.backup_interval_secs = 60 # TODO DEV ONLY
         # self.backup_interval_secs = 5 # TODO DEV ONLY
@@ -49,6 +48,7 @@ class Serial2CSV():
         self.backup_file_prefix = 'ubit_live_data_'
         self.backup_last_saved = 0
         self.backup_file_suffix = '%Y%m%d_%H%M%S'
+        # self.logfile_path  defined in logger_setup
         self.new_csv_linesL = []
 
         '''
@@ -442,36 +442,61 @@ class Serial2CSV():
             
     def env_detect(self):
         self.comports = comports()
-        if os.name == self.os_name_win:
+
+        if os.name == self.os_name_ux:
+            if os.geteuid() != 0:
+                exit('On Linux systems you must run this script as root. Eg. sudo python ...')
+            # Make a list of comport paths
+            comport_paths = []
+            for com in self.comports:
+                comport_paths.append(com[0])
+
+            # On Linux the Microbit comport has a very specific name
+            if self.serial_path_ux not in comport_paths:
+                exit("ux: Connect Microbit to USB before running this script.")
+            self.serial_path = self.serial_path_ux
+        
+        elif os.name == self.os_name_win:
             '''
             find the desired comport
             '''
             if len(self.comports) == 0:
-                exit("Connect Microbit to USB before running this script.")
+                exit("Win: Connect Microbit to USB before running this script.")
             elif len(self.comports) != 1:
-                exit("TODO: Multiple COM ports active on this device. Cannot determine which is the Microbit.")
-            
-            self.serial_path = self.comports[0][0]
-
-        elif os.name == self.os_name_ux:
-            if os.geteuid() != 0:
-                exit('On Linux systems you must run this script as root. Eg. sudo python ...')
-            '''
-            Make a list of comport paths
-            '''
-            comport_paths = []
-            for com in self.comports:
-                comport_paths.append(com[0])
-            if self.serial_path_ux not in comport_paths:
-                exit("Connect Microbit to USB before running this script.")
-            self.serial_path = self.serial_path_ux
-
+                self.select_win_comport(self.comports)
+            else:
+                self.serial_path = self.comports[0][0]
         else:
             exit('TODO: Unrecognized OS "{os.name}"')
+
+    def select_win_comport(self, comportsL):
+        log.info('Multiple COM ports detected - prompting user')
+
+        print("Which Port is the Microbit connected to?")
+        print("It's safe to try any port until find the correct one")
+
+        # Make a menu of COM IDs
+        com_choices = {}
+        for idx, port in enumerate(comportsL):
+            com_choices[idx] = port
+            print(f"{idx} - {port[0]} {port[1]}")
+        log.info(f'com_choices={com_choices}')
+        
+        # User Chooses - use zero based choice list
+        # NOTE: menu selections are integers NOT strings!
+        user_choice = int(input("Enter your choice: "))
+        log.info(f"User Chose |{user_choice}|")
+        
+        # The port number we need is field 0 in the selected Port record
+        self.serial_path = com_choices[user_choice][0]
+        log.info(f'User chosen comport: {user_choice} - {self.serial_path}')
+        print(f'{self.serial_path} selected')
 
     def logger_setup(self):
         max_file_size = 1024 * 1024  # 1 MB
         max_backup_files = 2
+        self.logfile_path = 's2csv.log'
+
         file_handler = RotatingFileHandler(
             self.logfile_path, maxBytes=max_file_size, backupCount=max_backup_files)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -484,10 +509,10 @@ class Serial2CSV():
 
 if __name__ == "__main__":
     ser2 = Serial2CSV()
+    log = ser2.logger_setup()
     ser2.config1()
     ser2.env_detect()
     ser2.config2()
-    log = ser2.logger_setup()
     log.info('STARTUP INFO for serial2csv')
     log.info(f'serialpath={ser2.serial_path}')
     log.info(f'sampling_period={ser2.sampling_period_secs} max_samples={ser2.sample_count}')
