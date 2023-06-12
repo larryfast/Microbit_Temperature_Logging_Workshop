@@ -57,7 +57,8 @@ You can test the microbits without the rest of the project code
 - Connect your device  (3-dot menu beside Download, lower right)
 - Power up at least one Temperature Sender
 	- Each of these will read the Temperature every 2 seconds and send the result to the radio2serial Microbit
-- Display the output graphically
+- Display the output graphically.
+- NOTE: if the graph seems to show nothing, wrap the microbit in your hand to change the temperature.
 ![](Readme_files/MicrobitEditor_ShowData.png)
 
 Note: The funky strings you see (zitaz & tugog in this example) are the Microbit IDs. The IDs are used to uniquely identify each data source.
