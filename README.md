@@ -82,6 +82,7 @@ The video introduction has a segment on installing these packages.
 The short story is, run the **connect_external_csv** Excel Macro. It adjusts the spreadsheet to work on your PC. 
 - **The video shows you how to run the following steps.**
 - Open the live_data.xlsm spreadsheet in Excel
+- You may get a couple warning banners
 - Enable Editing
 - Close the warning about running Macros - no changes required
 - Enable the Developer Menu (detailed steps are in the video)
